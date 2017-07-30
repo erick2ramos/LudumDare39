@@ -8,11 +8,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 1457fd0655628e74896a47023e2cffd4, type: 3}
   m_Name: GoodFood
-  m_EditorClassIdentifier: Assembly-CSharp::ChefPassiveSkill
+  m_EditorClassIdentifier: 
   skillName: Good Food
-  description: Esta es la descripcion del pasivo
-  cost: 3
+  description: asdadasdsdad
+  cost: 0
   isPassive: 1
-  flavorText: Este es el flavor text
+  flavorText: 123124141
+  onCooldown: 0
+  reductionAmount: 1

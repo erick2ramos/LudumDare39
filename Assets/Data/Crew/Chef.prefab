@@ -54,6 +54,7 @@ MonoBehaviour:
   name: Gordon Ramsey
   type: 0
   energyPerTurn: 4
+  isOcupied: 0
   skills:
-  - {fileID: 11400000, guid: a56fa1ec56ae3ef4da833f7888f471db, type: 2}
-  - {fileID: 11400000, guid: b397d9f48964ed6448704ee0f5307eda, type: 2}
+  - {fileID: 11400000, guid: 601a6df8432b5454eb982b602f858e73, type: 2}
+  - {fileID: 11400000, guid: 99d55e5647a84554cbb72a884f23b4cb, type: 2}
