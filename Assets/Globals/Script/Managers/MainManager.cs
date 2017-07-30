@@ -18,6 +18,7 @@ public class MainManager : MonoBehaviour {
 
     public CrewFactory crewFactory;
     public ShipFactory shipFactory;
+    public EventFactory eventFactory;
 
     void Start () {
 		if(instance == null)
@@ -27,6 +28,7 @@ public class MainManager : MonoBehaviour {
             optSelectionManager = GetComponent<OptionSelectionManager>();
             crewFactory = GetComponent<CrewFactory>();
             shipFactory = GetComponent<ShipFactory>();
+            eventFactory = GetComponent<EventFactory>();
             DontDestroyOnLoad(gameObject);
         } else
         {

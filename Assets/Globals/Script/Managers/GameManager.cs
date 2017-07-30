@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     public Ship currentShip;
+
+    public GameEvent currentEvent;
     public int TurnNumber;
+    public int TurnAmount;
 
     public bool passTurn;
+    public bool stateMachineActive;
 
     delegate void GamePhase();
     enum Phase
@@ -42,21 +46,24 @@ public class GameManager : MonoBehaviour {
         // Recolect and instantiate selected crew and ship
         // move Start code to here
         currentShip = MainManager.Get.shipFactory.Create(MainManager.Get.optSelectionManager.ShipSelected).GetComponent<Ship>();
-        for (int i = 0; i < MainManager.Get.optSelectionManager.CrewSelection.Length; i++)
-        {
-            GameObject crew = MainManager.Get.crewFactory.Create(MainManager.Get.optSelectionManager.CrewSelection[i]);
-            currentShip.AddCrewMember(i, crew.GetComponent<CrewMember>());
-        }
+        //for (int i = 0; i < MainManager.Get.optSelectionManager.CrewSelection.Length; i++)
+        //{
+        //    GameObject crew = MainManager.Get.crewFactory.Create(MainManager.Get.optSelectionManager.CrewSelection[i]);
+        //    currentShip.AddCrewMember(i, crew.GetComponent<CrewMember>());
+        //}
+        MainManager.Get.eventFactory.GenerateNewRunEvents(TurnAmount);
         nextPhase = Phase.Upkeep;
+        stateMachineActive = true;
     }
 	
 	void Update () {
         if(nextPhase != currentPhase)
         {
-            nextPhase = currentPhase;
+            currentPhase = nextPhase;
         } else
         {
-            phases[(int)currentPhase]();
+            if(stateMachineActive)
+                phases[(int)currentPhase]();
         }
 	}
 
@@ -65,18 +72,26 @@ public class GameManager : MonoBehaviour {
     public void PHDrawEvent()
     {
         // Check for event to resolve or fail then continue to next fase
+        if (currentEvent == null)
+        {
+            currentEvent = MainManager.Get.eventFactory.NextEvent();
+        }
+        print(currentEvent.options[1].failureText);
+        currentShip.InstantEnergy(currentEvent.options[1].failureEnergy);
+
         nextPhase = Phase.MainPhase;
     }
 
     public void PHMainPhase()
     {
         // Let the player play cards can pass phase until the player selects to finish his turn
+        
     }
 
     public void PHPass()
     {
         // Reduce ship energy applying all modifiers and continue to next fase
-        currentShip.CalculateEnergy();
+        //currentShip.CalculateEnergy();
         nextPhase = Phase.End;
     }
 

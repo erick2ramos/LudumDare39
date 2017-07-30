@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: New Hope
+  m_EditorClassIdentifier: 
+  eventId: new_hope_1
+  premise: Consigues una nave yedi, pero no hay nadie en ella
+  options:
+  - option: Revisar la nave en busca de materiales
+    successPercent: 30
+    successText: "Consigues una bateria nueva, seguro nadie la extra\xF1ar\xE1"
+    failureText: Al parecer el yedi si estaba dentro de la nave DOH.
+    successEnergy: 10
+    failureEnergy: -10
+  - option: Mejor dejamos tranquilo al yedi
+    successPercent: 90
+    successText: Mientras te alejabas vez a una persona que se asoma por la ventana.
+      FIUH menos mas no la revisamos.
+    failureText: Cuando te alejabas de la nave dejaste la nave en neutro y chocaste
+      con la nave... En serio... ESTAS EN EL ESPACIO!!
+    successEnergy: -4
+    failureEnergy: -10
+  crewEvent: {fileID: 0}

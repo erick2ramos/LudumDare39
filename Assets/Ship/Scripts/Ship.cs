@@ -87,9 +87,9 @@ public class Ship : MonoBehaviour{
         // TODO: Calculate slotchannelingDelta
     }
 
-    public void InstantConsumeEnergy(int amount)
+    public void InstantEnergy(int amount)
     {
-        Energy = Mathf.Clamp((Energy - amount), 0, MaxEnergy);
+        Energy = Mathf.Clamp((Energy + amount), 0, MaxEnergy);
 
     }
 

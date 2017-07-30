@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 1258721522}
   - component: {fileID: 1258721523}
   - component: {fileID: 1258721524}
+  - component: {fileID: 1258721525}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -294,8 +295,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentShip: {fileID: 0}
+  currentEvent: {fileID: 0}
   TurnNumber: 0
+  TurnAmount: 1
   passTurn: 0
+  stateMachineActive: 0
 --- !u!114 &1258721520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +315,7 @@ MonoBehaviour:
   optSelectionManager: {fileID: 0}
   crewFactory: {fileID: 0}
   shipFactory: {fileID: 0}
+  eventFactory: {fileID: 0}
 --- !u!4 &1258721521
 Transform:
   m_ObjectHideFlags: 0
@@ -363,3 +368,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShipSelected: 0
   CrewSelection: 
+--- !u!114 &1258721525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1258721518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f1b8e46dbe9eb44803f6f2f1482e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allEvents:
+  - {fileID: 11400000, guid: c0769319d059379408b0428a9928ca7d, type: 2}
