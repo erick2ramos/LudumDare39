@@ -23,10 +23,10 @@ MonoBehaviour:
     failureText: '"Are you mocking me?" '
     successEnergy: 10
     failureEnergy: -10
-  - option: Fight your way through him
+  - option: Fight your way through them
     successPercent: 50
-    successText: You successfully scape, they are not that smart in the end (right?)
-    failureText: It looks like redneck now a thing or two about gun and how to shoot
+    successText: You successfully escape, they are not that smart in the end (right?)
+    failureText: It looks like rednecks now a thing or two about guns and how to shoot
       them
     successEnergy: 0
     failureEnergy: -20

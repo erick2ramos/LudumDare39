@@ -9,14 +9,14 @@ public class EventFactory : MonoBehaviour
     public void GenerateNewRunEvents(int runEventsAmount)
     {
         runEvents = new Stack<int>();
-        float chanceToEnter = runEventsAmount / allEvents.Length;
+        float chanceToEnter = (float)runEventsAmount / allEvents.Length;
         for (int i = 0; i < allEvents.Length; i++)
         {
             if(Random.value < chanceToEnter)
             {
                 runEvents.Push(i);
             }
-            chanceToEnter = (runEventsAmount - runEvents.Count) / (allEvents.Length - i);
+            chanceToEnter = ((float)runEventsAmount - runEvents.Count) / (allEvents.Length - i + 1);
         }
     }
 
