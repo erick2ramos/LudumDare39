@@ -297,7 +297,7 @@ MonoBehaviour:
   currentShip: {fileID: 0}
   currentEvent: {fileID: 0}
   TurnNumber: 0
-  TurnAmount: 1
+  TurnAmount: 2
   passTurn: 0
   stateMachineActive: 0
 --- !u!114 &1258721520
@@ -381,3 +381,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allEvents:
   - {fileID: 11400000, guid: c0769319d059379408b0428a9928ca7d, type: 2}
+  - {fileID: 11400000, guid: 6293817d975d3c44bb68d90ab628a9b4, type: 2}

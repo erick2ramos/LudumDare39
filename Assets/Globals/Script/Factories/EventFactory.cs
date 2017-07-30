@@ -22,6 +22,8 @@ public class EventFactory : MonoBehaviour
 
     public GameEvent NextEvent()
     {
+        if (runEvents.Count <= 0)
+            return null;
         return allEvents[runEvents.Pop()];
     }
 }
