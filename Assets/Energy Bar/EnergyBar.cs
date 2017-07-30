@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class EnergyBar : MonoBehaviour {
     public Transform container;
     public GameObject element;
+    public Text energyNumberText;
+
     public int maxSegments = 10;
+    public int maxEnergy = 100;
     public bool debug;
     [Range(0, 1)]
     public float percent;
@@ -21,7 +24,7 @@ public class EnergyBar : MonoBehaviour {
         if (debug) SetBarPercen(0);
     }
 
-    public void SetBarPercen (float percen) {
+    public void SetBarPercen(float percen) {
         int numSegments = Mathf.RoundToInt((debug ? percent : this.percent) * maxSegments);
 
         var children = new List<GameObject>();
@@ -32,11 +35,11 @@ public class EnergyBar : MonoBehaviour {
             children.ForEach(child => DestroyImmediate(child));
         }
 
-
-
         for (int i = 0; i < numSegments; i++) {
             GameObject.Instantiate(element, container, false);
         }
+
+        energyNumberText.text = string.Format("{0}", percent * maxEnergy);
     }
 
 

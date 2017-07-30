@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
     public Ship currentShip;
@@ -21,6 +22,9 @@ public class GameManager : MonoBehaviour {
     GamePhase[] phases;
     Phase currentPhase;
     Phase nextPhase;
+
+    //TODO: Quitar esto!!!!!!!!!!!!!!
+    public Text phaseText;
 
     void Start () {
         TurnNumber = 0;
