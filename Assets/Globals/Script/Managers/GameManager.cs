@@ -25,7 +25,17 @@ public class GameManager : MonoBehaviour {
     void Start () {
         TurnNumber = 0;
         phases = new GamePhase[(int)Phase.Count];
-	}
+        phases[(int)Phase.Upkeep] = PHUpkeep;
+        phases[(int)Phase.DrawEvent] = PHDrawEvent;
+        phases[(int)Phase.MainPhase] = PHMainPhase;
+        phases[(int)Phase.Pass] = PHPass;
+        phases[(int)Phase.End] = PHEnd;
+
+
+        //QUITAR ESTO --- ES PARA PROBAR
+        Invoke("InitializeRun", 2);
+        //---
+    }
 
     public void InitializeRun()
     {
