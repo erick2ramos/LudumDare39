@@ -191,7 +191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   container: {fileID: 607293482}
   element: {fileID: 1817960036125170, guid: 396c92461350ef34c87ef6d26be84aac, type: 2}
+  energyNumberText: {fileID: 1214287060}
   maxSegments: 10
+  maxEnergy: 100
   debug: 1
   percent: 0
 --- !u!1 &345070460
@@ -825,7 +827,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -646, y: 415}
+  m_AnchoredPosition: {x: -645.99994, y: 415}
   m_SizeDelta: {x: -1294, y: -830}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1161382243
@@ -928,7 +930,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 0
 --- !u!222 &1214287061
 CanvasRenderer:
   m_ObjectHideFlags: 0

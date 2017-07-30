@@ -21,11 +21,11 @@ public class EnergyBar : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (debug) SetBarPercen(0);
+        if (debug) SetBarPercent(0);
     }
 
-    public void SetBarPercen(float percen) {
-        int numSegments = Mathf.RoundToInt((debug ? percent : this.percent) * maxSegments);
+    public void SetBarPercent(float percent) {
+        int numSegments = Mathf.RoundToInt((debug ? this.percent : this.percent) * maxSegments);
 
         var children = new List<GameObject>();
         foreach (Transform child in container) children.Add(child.gameObject);
@@ -39,7 +39,7 @@ public class EnergyBar : MonoBehaviour {
             GameObject.Instantiate(element, container, false);
         }
 
-        energyNumberText.text = string.Format("{0}", percent * maxEnergy);
+        energyNumberText.text = string.Format("{0}", this.percent * maxEnergy);
     }
 
 

@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour {
     //TODO: Quitar esto!!!!!!!!!!!!!!
     public Text phaseText;
 
+    public UIManager uiManager;
+    public Animator mainAnimator;
+
     void Start () {
         TurnNumber = 0;
         phases = new GamePhase[(int)Phase.Count];
@@ -42,6 +45,7 @@ public class GameManager : MonoBehaviour {
 
         //QUITAR ESTO --- ES PARA PROBAR
         Invoke("InitializeRun", 2);
+        
         //---
     }
 
@@ -58,6 +62,7 @@ public class GameManager : MonoBehaviour {
         MainManager.Get.eventFactory.GenerateNewRunEvents(TurnAmount);
         nextPhase = Phase.Upkeep;
         stateMachineActive = true;
+        mainAnimator.SetTrigger("Next");
     }
 	
 	void Update () {
@@ -76,7 +81,8 @@ public class GameManager : MonoBehaviour {
     public void PHDrawEvent()
     {
         print("Turn Number: " + TurnNumber);
-        print("Energy left: " + currentShip.Energy + "/" + currentShip.MaxEnergy);
+        uiManager.energyBar.SetBarPercent(currentShip.Energy / currentShip.MaxEnergy);
+        //print("Energy left: " + currentShip.Energy + "/" + currentShip.MaxEnergy);
         // Check for event to resolve or fail then continue to next fase
         currentEvent = MainManager.Get.eventFactory.NextEvent();
         if (currentEvent == null)
@@ -84,13 +90,22 @@ public class GameManager : MonoBehaviour {
             stateMachineActive = false;
             return;
         }
-        print(currentEvent.premise);
-        for (int i = 0; i < currentEvent.options.Length; i++)
+        uiManager.dialogue.text = currentEvent.premise + "\nWhat you do?";
+        //print(currentEvent.premise);
+        uiManager.option1.text = string.Format("{0}. {1}", 1, currentEvent.options[0].option);
+        uiManager.option2.text = string.Format("{0}. {1}", 2, currentEvent.options[1].option);
+
+        /*for (int i = 0; i < currentEvent.options.Length; i++)
         {
             print(i + ". " + currentEvent.options[i].option);
-        }
-        print("What you do?");
+        }*/
+        //print("What you do?");
         nextPhase = Phase.MainPhase;
+        
+    }
+
+    public void GetAnswer (int option) {
+        EventSelectOption(currentEvent.options[option]);
     }
 
     public void PHMainPhase()
@@ -117,26 +132,36 @@ public class GameManager : MonoBehaviour {
         nextPhase = Phase.End;
     }
 
-    public void PHEnd() { nextPhase = Phase.Upkeep; }
+    public void PHEnd() {
+        //nextPhase = Phase.Upkeep;
+    }
+
+    public void NextQuestion () {
+        mainAnimator.SetTrigger("Next");
+        nextPhase = Phase.Upkeep;
+    }
 
     public void TurnPass()
     {
         nextPhase = Phase.Pass;
         TurnNumber++;
+        uiManager.distance.value = TurnNumber / TurnAmount;
     }
 
     public void EventSelectOption(EventOption option)
     {
         if (Random.value * 100 < option.successPercent)
         {
-            print(option.successText);
-            currentShip.InstantEnergy(option.successEnergy);
+            uiManager.answer.text = option.successText;
+            //print(option.successText);
+            uiManager.energyBar.SetBarPercent( currentShip.InstantEnergy(option.successEnergy) );
         } else
         {
-            print(option.failureText);
-            currentShip.InstantEnergy(option.successEnergy);
+            uiManager.answer.text = option.failureText.ToString();
+            //print(option.failureText);
+            uiManager.energyBar.SetBarPercent(currentShip.InstantEnergy(option.successEnergy) );
         }
-
+        mainAnimator.SetTrigger("Answer");
         TurnPass();
     }
 }
