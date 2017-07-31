@@ -27,11 +27,10 @@ public class GameManager : MonoBehaviour {
     Phase currentPhase;
     Phase nextPhase;
 
-    //TODO: Quitar esto!!!!!!!!!!!!!!
-    public Text phaseText;
-
     public UIManager uiManager;
     public Animator mainAnimator;
+
+    public string mainMenuSceneName;
 
     void Start () {
         TurnNumber = 0;
@@ -62,7 +61,8 @@ public class GameManager : MonoBehaviour {
         MainManager.Get.eventFactory.GenerateNewRunEvents(TurnAmount);
         nextPhase = Phase.Upkeep;
         stateMachineActive = true;
-        mainAnimator.SetTrigger("Next");
+        //mainAnimator.SetTrigger("Next");
+        uiManager.distance.value = 0;
     }
 	
 	void Update () {
@@ -80,13 +80,25 @@ public class GameManager : MonoBehaviour {
         if(TurnAmount == TurnNumber)
         {
             // Gratz you win the game
-        }
-
-        if(currentShip.Energy <= 0)
+            mainAnimator.SetTrigger("Win");
+        } else if(currentShip.Energy <= 0)
         {
             // Boom game over :(
+            mainAnimator.SetTrigger("Lose");
+        } else {
+            mainAnimator.SetTrigger("Next");
         }
+
         nextPhase = Phase.DrawEvent;
+    }
+
+    public void Restart () {
+        InitializeRun();
+        mainAnimator.SetTrigger("Restart");
+    }
+
+    public void ExitToMenu () {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(mainMenuSceneName);
     }
 
     public void PHDrawEvent()
@@ -148,7 +160,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void NextQuestion () {
-        mainAnimator.SetTrigger("Next");
+        
         nextPhase = Phase.Upkeep;
     }
 
