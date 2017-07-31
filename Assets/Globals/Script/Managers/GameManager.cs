@@ -40,10 +40,6 @@ public class GameManager : MonoBehaviour {
         phases[(int)Phase.MainPhase] = PHMainPhase;
         phases[(int)Phase.Pass] = PHPass;
         phases[(int)Phase.End] = PHEnd;
-
-
-        //QUITAR ESTO --- ES PARA PROBAR
-        Invoke("InitializeRun", 2);
         
         //---
     }
@@ -104,7 +100,7 @@ public class GameManager : MonoBehaviour {
     public void PHDrawEvent()
     {
         print("Turn Number: " + TurnNumber);
-        uiManager.energyBar.SetBarPercent(currentShip.Energy / currentShip.MaxEnergy);
+        uiManager.energyBar.SetBarPercent((float) currentShip.Energy / currentShip.MaxEnergy);
         //print("Energy left: " + currentShip.Energy + "/" + currentShip.MaxEnergy);
         // Check for event to resolve or fail then continue to next fase
         currentEvent = MainManager.Get.eventFactory.NextEvent();

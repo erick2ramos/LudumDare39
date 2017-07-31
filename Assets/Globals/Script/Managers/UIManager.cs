@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
-    public EnergyBar energyBar;
+    public EnergyBar2 energyBar;
     public Slider distance;
     public Image portrait;
     public Text dialogue;

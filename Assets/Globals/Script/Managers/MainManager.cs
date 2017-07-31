@@ -29,7 +29,7 @@ public class MainManager : MonoBehaviour {
             crewFactory = GetComponent<CrewFactory>();
             shipFactory = GetComponent<ShipFactory>();
             eventFactory = GetComponent<EventFactory>();
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         } else
         {
             Destroy(gameObject);
