@@ -90,7 +90,7 @@ public class Ship : MonoBehaviour{
     public float InstantEnergy(int amount)
     {
         Energy = Mathf.Clamp((Energy + amount), 0, MaxEnergy);
-        return Energy / MaxEnergy;
+        return (float)Energy / MaxEnergy;
 
     }
 

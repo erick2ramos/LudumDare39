@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum CrewType
 {
+    None,
     Chef,
     Soldier,
     Pilot,

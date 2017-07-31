@@ -16,7 +16,7 @@ public class EventFactory : MonoBehaviour
             {
                 runEvents.Push(i);
             }
-            chanceToEnter = ((float)runEventsAmount - runEvents.Count) / (allEvents.Length - i + 1);
+            chanceToEnter = ((float)runEventsAmount - runEvents.Count) / (allEvents.Length - (i + 1));
         }
     }
 
