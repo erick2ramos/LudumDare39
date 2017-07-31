@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: janitor_2
+  m_EditorClassIdentifier: 
+  eventId: 
+  premise: The janitor is taking some medicine without saying why
+  options:
+  - option: Ask them back
+    successPercent: 100
+    successText: Lets say that if looks could kill, the janitor would have killed
+      you 10 times already
+    failureText: 
+    successEnergy: 10
+    failureEnergy: 0
+  - option: Let him have it, its just a janitor
+    successPercent: 80
+    successText: The janitor is pleased and will remember that, in fact he returns
+      the stolen medicine
+    failureText: The janitor is pleased and will remember that
+    successEnergy: 10
+    failureEnergy: -10
+  crewEvent: 4

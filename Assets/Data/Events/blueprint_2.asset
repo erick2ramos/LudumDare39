@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: blueprint_2
+  m_EditorClassIdentifier: 
+  eventId: 
+  premise: The engineers finished a prototype that might make the reactor more eficient
+  options:
+  - option: Install it
+    successPercent: 80
+    successText: In fact it does what they spected
+    failureText: They installed it backwards making the reactor less efective
+    successEnergy: 10
+    failureEnergy: -10
+  - option: I don't like that "might"
+    successPercent: 100
+    successText: It wasn't a novel price winner either
+    failureText: 
+    successEnergy: 0
+    failureEnergy: 0
+  crewEvent: 5

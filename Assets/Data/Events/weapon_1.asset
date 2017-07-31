@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: weapon_1
+  m_EditorClassIdentifier: 
+  eventId: 
+  premise: The soldier ask to test the ship weapons as they haven't fired in a while
+  options:
+  - option: Test against a star
+    successPercent: 70
+    successText: The weapons fire with no problems, the red star turns blue, thats
+      weird?
+    failureText: The weapons didn't fire, we need to repair them
+    successEnergy: 10
+    failureEnergy: -10
+  - option: Test against an asteroid
+    successPercent: 70
+    successText: The weapons fire with no problems, it looks like the former asteroid
+      had some resources that yuo recover
+    failureText: The weapons didn't fire, we need to repair them
+    successEnergy: 10
+    failureEnergy: -10
+  crewEvent: 2

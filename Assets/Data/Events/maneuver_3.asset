@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: maneuver_3
+  m_EditorClassIdentifier: 
+  eventId: 
+  premise: An ion field is on the way that could heat up the ship like a microwave
+  options:
+  - option: Cover the ship in tin foil to prevent waves pass through the ship
+    successPercent: 30
+    successText: The tin foil is still like new you take it into the ship again
+    failureText: The tin foil is irrecoverable after passing the field
+    successEnergy: 10
+    failureEnergy: -5
+  - option: Take the long route
+    successPercent: 60
+    successText: After a while looking you notice a space in the ion field with no
+      ions
+    failureText: After a long time you found the end of the ion field
+    successEnergy: 0
+    failureEnergy: -10
+  crewEvent: 5

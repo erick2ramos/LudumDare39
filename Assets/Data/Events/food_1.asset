@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: food_1
+  m_EditorClassIdentifier: 
+  eventId: 
+  premise: Some of the food in the ship has a week past the expiration date
+  options:
+  - option: 7 days rule. That food is good
+    successPercent: 70
+    successText: It looks like the food was good
+    failureText: The food made the crew sick
+    successEnergy: 0
+    failureEnergy: -10
+  - option: Don't trust it. Throw it away
+    successPercent: 80
+    successText: At least it wasn't that much food
+    failureText: It was a lot of food to throw away
+    successEnergy: 0
+    failureEnergy: -10
+  crewEvent: 1

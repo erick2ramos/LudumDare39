@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: blueprint_1
+  m_EditorClassIdentifier: 
+  eventId: 
+  premise: Found a blueprint for an artifact, it could help to save some energy
+  options:
+  - option: Build the artifact
+    successPercent: 30
+    successText: It was a one time energy capsule
+    failureText: It seems it was the blueprint for a space toilet. What a waste
+    successEnergy: 10
+    failureEnergy: -10
+  - option: Try to decyfer what is the artifact about
+    successPercent: 30
+    successText: The blueprint makes no sense but you can use it as resource for the
+      ship
+    failureText: After a while you notice its a space toilet blueprint. At least we
+      checked it first
+    successEnergy: 5
+    failureEnergy: 0
+  crewEvent: 5

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: relations_1
+  m_EditorClassIdentifier: 
+  eventId: 
+  premise: A ship comunicates with you and ask for some resources to help them get
+    to their destiny
+  options:
+  - option: Give them some resources
+    successPercent: 80
+    successText: The other ship thanks you and in exchange they told you about a planet
+      where you can harvest energy for the ship
+    failureText: It was a trap they steal some of your resources
+    successEnergy: 10
+    failureEnergy: -10
+  - option: Attack them
+    successPercent: 100
+    successText: Wow you are a bad person. From the wreckage you recover some resources
+    failureText: 
+    successEnergy: 5
+    failureEnergy: 0
+  crewEvent: 6

@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Gordon Ramsey
-  type: 0
+  type: 1
   energyPerTurn: 4
   isOcupied: 0
   skills:

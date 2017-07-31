@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: virus_1
+  m_EditorClassIdentifier: 
+  eventId: virus_1
+  premise: Looks like a virus is starting to spread among the ship crew
+  options:
+  - option: Quarantine the ship until there no trace of sickness
+    successPercent: 70
+    successText: The Quarantine was efective and in time
+    failureText: The Quarantine took much longer than spected but everyone is fine
+      now
+    successEnergy: 10
+    failureEnergy: -10
+  - option: Keep going it must be just a flu
+    successPercent: 30
+    successText: It looks like you were right. This time.
+    failureText: It was more than just a flu, half of the crew got sick and couldn't
+      do their job
+    successEnergy: 15
+    failureEnergy: -15
+  crewEvent: 4

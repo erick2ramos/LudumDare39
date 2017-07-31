@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: NewPlanet
+  m_EditorClassIdentifier: 
+  eventId: new_planet
+  premise: Found a little planet that doesn't appear in the database
+  options:
+  - option: Send a team in search of anything that could help in the journey
+    successPercent: 70
+    successText: The team found some resources and brung them to the ship
+    failureText: The team got attacked by the wildlife in the planet, made it back
+      in one piece but couldn't bring any
+    successEnergy: 10
+    failureEnergy: -10
+  - option: There's no time to waste keep going
+    successPercent: 100
+    successText: Obviously there's nothing in that planet you kept going
+    failureText: 
+    successEnergy: 0
+    failureEnergy: 0
+  crewEvent: 3

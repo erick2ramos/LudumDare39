@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: virus_2
+  m_EditorClassIdentifier: 
+  eventId: 
+  premise: An alien entity is in the ship
+  options:
+  - option: Fight it with FIRE!
+    successPercent: 20
+    successText: The alien is killed with no arm to the ship nor the crew
+    failureText: The fire is spreading FAST! TURN IT OFF!
+    successEnergy: 0
+    failureEnergy: -10
+  - option: Chase it to a ship's exit bay to expel it
+    successPercent: 20
+    successText: The alien is small and filled with fear, it jumps in directly to
+      the reactor giving the ship more energy
+    failureText: It was an easy task, although some resource got expeled as well
+    successEnergy: 5
+    failureEnergy: -5
+  crewEvent: 4

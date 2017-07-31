@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: maneuver_1
+  m_EditorClassIdentifier: 
+  eventId: 
+  premise: There is a ternary star system, the pilot could maneouver to get more impulse
+    with their gravity but its a risky move
+  options:
+  - option: Do it
+    successPercent: 70
+    successText: The pilot maneuvers with no problem through the star system saving
+      energy
+    failureText: The pilot did a bad move and has to spend energy to set the ship
+      back in route
+    successEnergy: 10
+    failureEnergy: -10
+  - option: Better be safe
+    successPercent: 100
+    successText: '"You are boring" says the pilot'
+    failureText: 
+    successEnergy: 0
+    failureEnergy: 0
+  crewEvent: 3

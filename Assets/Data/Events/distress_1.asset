@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: distress_1
+  m_EditorClassIdentifier: 
+  eventId: 
+  premise: You caught a distress call from a grounded ship not that far
+  options:
+  - option: Investigate the distress call for survivors or resources
+    successPercent: 30
+    successText: The ship was empty but you manage to scavenge some resources
+    failureText: The ship was empty, there's nothing there
+    successEnergy: 10
+    failureEnergy: 0
+  - option: It's surely a trap keep going
+    successPercent: 90
+    successText: You kept going with no problem, you'll never know if it was a trap
+      or not
+    failureText: It was a trap, the ship suddenly starts firing at you damaging some
+      systems but you manage to escape
+    successEnergy: 0
+    failureEnergy: -10
+  crewEvent: 0

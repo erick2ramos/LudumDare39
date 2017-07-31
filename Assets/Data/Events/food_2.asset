@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: food_2
+  m_EditorClassIdentifier: 
+  eventId: 
+  premise: The chef says that if we open all of the potato chip bags augmenting the
+    oxigen levels of the ship saving in the air filters
+  options:
+  - option: Do it
+    successPercent: 60
+    successText: Who would say it the chaf was right
+    failureText: The potato chip bags were void closed making the opening a waste
+      of oxigen
+    successEnergy: 10
+    failureEnergy: -10
+  - option: It's a waste of resources
+    successPercent: 80
+    successText: It's not a good idea anyway
+    failureText: The chef feels insulted and throws good food to the thrash
+    successEnergy: 0
+    failureEnergy: -10
+  crewEvent: 1

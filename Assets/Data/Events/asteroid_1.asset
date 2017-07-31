@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: asteroid_1
+  m_EditorClassIdentifier: 
+  eventId: asteroid_1
+  premise: There's an asteroid field in the way
+  options:
+  - option: Carefully go through it
+    successPercent: 30
+    successText: Your pilot it's the top of the top, didn't hit even space dust
+    failureText: You can feel every asteroid the ship hits in your nervous and freightened
+      soul
+    successEnergy: 15
+    failureEnergy: -10
+  - option: Find a safer way to pass
+    successPercent: 60
+    successText: After a while you found a really safe space between the asteroids
+    failureText: After a while, and a chunk of energy you found a space to go through
+      without arming the ship
+    successEnergy: 0
+    failureEnergy: -10
+  crewEvent: 3

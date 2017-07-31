@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8638a50ce53e94bb2b7eda456a1746, type: 3}
+  m_Name: relations_2
+  m_EditorClassIdentifier: 
+  eventId: 
+  premise: You receive a call from another ship that has run out of energy and is
+    asking if you can take their crew in your ship
+  options:
+  - option: Sure
+    successPercent: 80
+    successText: The amount of people is small enough to not be a burden
+    failureText: The amount of people is more than you espected
+    successEnergy: 0
+    failureEnergy: -10
+  - option: Give them some resources instead
+    successPercent: 100
+    successText: They are very thankful
+    failureText: 
+    successEnergy: -10
+    failureEnergy: 0
+  crewEvent: 6
