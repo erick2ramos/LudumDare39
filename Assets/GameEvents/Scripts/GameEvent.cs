@@ -7,7 +7,7 @@ public class GameEvent : ScriptableObject
     public string eventId;
     public string premise;
     public EventOption[] options;
-    public CrewMember crewEvent = null;
+    public CrewType crewEvent;
 }
 
 [System.Serializable]

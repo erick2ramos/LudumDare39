@@ -76,7 +76,18 @@ public class GameManager : MonoBehaviour {
         }
 	}
 
-    public void PHUpkeep() { nextPhase = Phase.DrawEvent; }
+    public void PHUpkeep() {
+        if(TurnAmount == TurnNumber)
+        {
+            // Gratz you win the game
+        }
+
+        if(currentShip.Energy <= 0)
+        {
+            // Boom game over :(
+        }
+        nextPhase = Phase.DrawEvent;
+    }
 
     public void PHDrawEvent()
     {
@@ -90,10 +101,10 @@ public class GameManager : MonoBehaviour {
             stateMachineActive = false;
             return;
         }
-        uiManager.dialogue.text = currentEvent.premise + "\nWhat you do?";
+        uiManager.dialogue.text = currentEvent.premise + "\nWhat do you do?";
         //print(currentEvent.premise);
-        uiManager.option1.text = string.Format("{0}. {1}", 1, currentEvent.options[0].option);
-        uiManager.option2.text = string.Format("{0}. {1}", 2, currentEvent.options[1].option);
+        uiManager.option1.text = currentEvent.options[0].option;
+        uiManager.option2.text = currentEvent.options[1].option;
 
         /*for (int i = 0; i < currentEvent.options.Length; i++)
         {
@@ -145,7 +156,7 @@ public class GameManager : MonoBehaviour {
     {
         nextPhase = Phase.Pass;
         TurnNumber++;
-        uiManager.distance.value = TurnNumber / TurnAmount;
+        uiManager.distance.value = (float)TurnNumber / TurnAmount;
     }
 
     public void EventSelectOption(EventOption option)
