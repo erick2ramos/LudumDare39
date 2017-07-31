@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour {
     public Animator mainAnimator;
 
     public string mainMenuSceneName;
+    public AudioSource succesSound;
+    public AudioSource failSound;
 
     void Start () {
         TurnNumber = 0;
@@ -172,13 +174,13 @@ public class GameManager : MonoBehaviour {
         if (Random.value * 100 < option.successPercent)
         {
             uiManager.answer.text = option.successText;
-            //print(option.successText);
+            succesSound.Play();
             uiManager.energyBar.SetBarPercent( currentShip.InstantEnergy(option.successEnergy) );
         } else
         {
             uiManager.answer.text = option.failureText.ToString();
-            //print(option.failureText);
-            uiManager.energyBar.SetBarPercent(currentShip.InstantEnergy(option.successEnergy) );
+            failSound.Play();
+            uiManager.energyBar.SetBarPercent(currentShip.InstantEnergy(option.failureEnergy) );
         }
         mainAnimator.SetTrigger("Answer");
         TurnPass();

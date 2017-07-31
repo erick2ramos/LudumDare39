@@ -24,6 +24,7 @@ public class EnergyBar2 : MonoBehaviour {
 
     public void SetBarPercent(float percent) {
         energyBar.fillAmount = debug? this.percent : percent;
+        energyNumberText.text = string.Format("{0}", (debug ? this.percent : percent) * maxEnergy);
     }
 
 
