@@ -18,10 +18,10 @@ MonoBehaviour:
   - option: Give them some of energy and adopt the best "flag salute" position you
       can
     successPercent: 60
-    successText: He drop a tear after your honorable salutation and returns the energy,
+    successText: He drops a tear after your honorable salutation and returns the energy,
       he can't take it from someone so patriotic, in fact he return some more energy
-    failureText: '"Are you mocking me?" '
-    successEnergy: 10
+    failureText: '"Are you mocking me?" says the redneck'
+    successEnergy: 5
     failureEnergy: -10
   - option: Fight your way through them
     successPercent: 50

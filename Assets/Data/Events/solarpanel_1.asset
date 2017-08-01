@@ -15,7 +15,7 @@ MonoBehaviour:
   premise: The ship is near a Red Dwarf should we close the ship's solar panels
   options:
   - option: Close them, lets not risk it
-    successPercent: 0
+    successPercent: 80
     successText: The panels closed with no problem
     failureText: Some of the panels had a malfunction and couldn't close, discharging
       some energy

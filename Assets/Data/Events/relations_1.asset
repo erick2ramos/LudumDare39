@@ -20,7 +20,7 @@ MonoBehaviour:
     successText: The other ship thanks you and in exchange they told you about a planet
       where you can harvest energy for the ship
     failureText: It was a trap they steal some of your resources
-    successEnergy: 10
+    successEnergy: 5
     failureEnergy: -10
   - option: Attack them
     successPercent: 100

@@ -18,7 +18,7 @@ MonoBehaviour:
     successPercent: 30
     successText: It was a one time energy capsule
     failureText: It seems it was the blueprint for a space toilet. What a waste
-    successEnergy: 10
+    successEnergy: 5
     failureEnergy: -10
   - option: Try to decyfer what is the artifact about
     successPercent: 30

@@ -19,13 +19,13 @@ MonoBehaviour:
     successText: The weapons fire with no problems, the red star turns blue, thats
       weird?
     failureText: The weapons didn't fire, we need to repair them
-    successEnergy: 10
+    successEnergy: 5
     failureEnergy: -10
   - option: Test against an asteroid
     successPercent: 70
     successText: The weapons fire with no problems, it looks like the former asteroid
-      had some resources that yuo recover
+      had some resources that you recover
     failureText: The weapons didn't fire, we need to repair them
-    successEnergy: 10
+    successEnergy: 5
     failureEnergy: -10
   crewEvent: 2

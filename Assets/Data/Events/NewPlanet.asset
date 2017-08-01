@@ -19,7 +19,7 @@ MonoBehaviour:
     successText: The team found some resources and brung them to the ship
     failureText: The team got attacked by the wildlife in the planet, made it back
       in one piece but couldn't bring any
-    successEnergy: 10
+    successEnergy: 5
     failureEnergy: -10
   - option: There's no time to waste keep going
     successPercent: 100

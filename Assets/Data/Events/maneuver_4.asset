@@ -19,7 +19,7 @@ MonoBehaviour:
     successText: The wormhole put you back in time but forward in space. Nice
     failureText: The wormhole put you forward in time but in the same place. Damn
       this holes!
-    successEnergy: 10
+    successEnergy: 5
     failureEnergy: -10
   - option: Just passing by
     successPercent: 100
