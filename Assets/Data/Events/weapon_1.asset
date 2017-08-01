@@ -28,4 +28,4 @@ MonoBehaviour:
     failureText: The weapons didn't fire, we need to repair them
     successEnergy: 5
     failureEnergy: -10
-  crewEvent: 2
+  crewEvent: 3
