@@ -29,4 +29,4 @@ MonoBehaviour:
       hit the ship but you escape in the end
     successEnergy: 0
     failureEnergy: -10
-  crewEvent: 6
+  crewEvent: 3

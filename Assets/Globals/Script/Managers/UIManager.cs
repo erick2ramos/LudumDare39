@@ -12,11 +12,42 @@ public class UIManager : MonoBehaviour {
     public Text option2;
     public Text answer;
 
+    public Sprite[] portraits;
 
 
     void Start () {
 		
 	}
 	
-
+    public void ChangePortrait(CrewType type)
+    {
+        switch(type)
+        {
+            case CrewType.Chef:
+                {
+                    portrait.sprite = portraits[0];
+                    break;
+                }
+            case CrewType.Medic:
+                {
+                    portrait.sprite = portraits[1];
+                    break;
+                }
+            case CrewType.Pilot:
+                {
+                    portrait.sprite = portraits[2];
+                    break;
+                }
+            case CrewType.Engineer:
+                {
+                    portrait.sprite = portraits[3];
+                    break;
+                }
+            default:
+                {
+                    portrait.sprite = portraits[Random.Range(0,3)];
+                    break;
+                }
+        }
+    }
 }

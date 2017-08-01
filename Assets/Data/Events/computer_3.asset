@@ -26,4 +26,4 @@ MonoBehaviour:
     failureText: 
     successEnergy: 0
     failureEnergy: 0
-  crewEvent: 0
+  crewEvent: 5

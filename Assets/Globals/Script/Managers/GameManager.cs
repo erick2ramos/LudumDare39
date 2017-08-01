@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour {
         //    GameObject crew = MainManager.Get.crewFactory.Create(MainManager.Get.optSelectionManager.CrewSelection[i]);
         //    currentShip.AddCrewMember(i, crew.GetComponent<CrewMember>());
         //}
+        TurnNumber = 0;
         MainManager.Get.eventFactory.GenerateNewRunEvents(TurnAmount);
         nextPhase = Phase.Upkeep;
         stateMachineActive = true;
@@ -116,7 +117,7 @@ public class GameManager : MonoBehaviour {
         //print(currentEvent.premise);
         uiManager.option1.text = currentEvent.options[0].option;
         uiManager.option2.text = currentEvent.options[1].option;
-
+        uiManager.ChangePortrait(currentEvent.crewEvent);
         /*for (int i = 0; i < currentEvent.options.Length; i++)
         {
             print(i + ". " + currentEvent.options[i].option);

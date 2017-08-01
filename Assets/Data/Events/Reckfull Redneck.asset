@@ -30,4 +30,4 @@ MonoBehaviour:
       them
     successEnergy: 0
     failureEnergy: -20
-  crewEvent: 2
+  crewEvent: 3
