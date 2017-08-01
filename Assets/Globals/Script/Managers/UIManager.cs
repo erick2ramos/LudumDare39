@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour {
     public Text option1;
     public Text option2;
     public Text answer;
+	public Button b1;
+	public Button b2;
 
 
 

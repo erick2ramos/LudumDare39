@@ -102,6 +102,8 @@ public class GameManager : MonoBehaviour {
 
     public void PHDrawEvent()
     {
+		uiManager.b1.interactable= true;
+		uiManager.b2.interactable= true;
         print("Turn Number: " + TurnNumber);
         uiManager.energyBar.SetBarPercent((float) currentShip.Energy / currentShip.MaxEnergy);
         //print("Energy left: " + currentShip.Energy + "/" + currentShip.MaxEnergy);
@@ -127,7 +129,9 @@ public class GameManager : MonoBehaviour {
     }
 
     public void GetAnswer (int option) {
-        EventSelectOption(currentEvent.options[option]);
+		if (currentEvent != null) {
+			EventSelectOption(currentEvent.options[option]);
+		}        
     }
 
     public void PHMainPhase()
@@ -159,8 +163,10 @@ public class GameManager : MonoBehaviour {
     }
 
     public void NextQuestion () {
+		if (nextPhase == Phase.End) {
+			nextPhase = Phase.Upkeep;
+		}
         
-        nextPhase = Phase.Upkeep;
     }
 
     public void TurnPass()
@@ -172,6 +178,9 @@ public class GameManager : MonoBehaviour {
 
     public void EventSelectOption(EventOption option)
     {
+		uiManager.b1.interactable = false;
+		uiManager.b2.interactable = false;
+		mainAnimator.SetTrigger("Answer");
         int finalConsumption = 0;
         if (Random.value * 100 < option.successPercent)
         {
@@ -186,7 +195,7 @@ public class GameManager : MonoBehaviour {
         }
         finalConsumption -= energyPerTurn;
         uiManager.energyBar.SetBarPercent(currentShip.InstantEnergy(finalConsumption));
-        mainAnimator.SetTrigger("Answer");
+        
         TurnPass();
     }
 }
