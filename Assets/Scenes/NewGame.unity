@@ -2925,6 +2925,7 @@ MonoBehaviour:
   TurnNumber: 0
   TurnAmount: 10
   passTurn: 0
+  energyPerTurn: 10
   stateMachineActive: 0
   uiManager: {fileID: 1639165528}
   mainAnimator: {fileID: 1639165526}

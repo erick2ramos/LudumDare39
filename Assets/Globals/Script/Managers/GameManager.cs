@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public int TurnAmount;
 
     public bool passTurn;
+    public int energyPerTurn;
     public bool stateMachineActive;
 
     delegate void GamePhase();
@@ -171,17 +172,20 @@ public class GameManager : MonoBehaviour {
 
     public void EventSelectOption(EventOption option)
     {
+        int finalConsumption = 0;
         if (Random.value * 100 < option.successPercent)
         {
             uiManager.answer.text = option.successText;
             succesSound.Play();
-            uiManager.energyBar.SetBarPercent( currentShip.InstantEnergy(option.successEnergy) );
+            finalConsumption = option.successEnergy;
         } else
         {
             uiManager.answer.text = option.failureText.ToString();
             failSound.Play();
-            uiManager.energyBar.SetBarPercent(currentShip.InstantEnergy(option.failureEnergy) );
+            finalConsumption = option.failureEnergy;
         }
+        finalConsumption -= energyPerTurn;
+        uiManager.energyBar.SetBarPercent(currentShip.InstantEnergy(finalConsumption));
         mainAnimator.SetTrigger("Answer");
         TurnPass();
     }
